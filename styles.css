@@ -24,18 +24,18 @@
   width: 10%; /* Ajustez cette valeur selon vos besoins */
   height: auto;
 }
-.svg-objectif {
+.svg-objectif svg {
   display: flex;
-  width: 10%;
+  width: 70%;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: center;
   height: auto;
 }
 .objectf {
   display: flex;
   flex-wrap: wrap; /* Essaie aussi: nowrap, wrap-reverse */
   justify-content: flex-end;
-  width: 30%; /* Ajustez cette valeur selon vos besoins */
+  width: 10%; /* Ajustez cette valeur selon vos besoins */
   height: auto;
 }
 .présentation,
@@ -105,4 +105,12 @@
 .item-experiences li,
 .item-langues li {
   list-style-type: none;
+}
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .svg-objectif {
+    display: none;
+  }
+  .svg {
+    display: none;
+  }
 }
