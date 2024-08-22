@@ -3,86 +3,97 @@
 .exp-form,
 .item-informations {
   display: flex;
-  width: 100%; /* Ajustez cette valeur selon vos besoins */
+  width: 100%; /* Peut être conservé pour les grands écrans */
 }
+
 .contenair-header {
   display: flex;
   justify-content: center;
-  width: 100%; /* Ajustez cette valeur selon vos besoins */
+  width: 100%;
 }
+
 .présentation {
   display: flex;
-  flex-wrap: wrap; /* Essaie aussi: nowrap, wrap-reverse */
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  width: 70%; /* Ajustez cette valeur selon vos besoins */
+  width: 70%; /* Augmentation de la largeur pour les grands écrans */
   height: auto;
 }
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  width: 100%; /* Pour s'assurer qu'ils occupent toute la largeur et forcent le retour à la ligne */
+}
+
 .svg {
   display: flex;
-  flex-wrap: wrap; /* Essaie aussi: nowrap, wrap-reverse */
-  width: 10%; /* Ajustez cette valeur selon vos besoins */
+  flex-wrap: wrap;
+  width: 20%; /* Ajusté pour les écrans PC */
   height: auto;
 }
+
 .svg-objectif svg {
   display: flex;
-  width: 70%;
+  width: 80%; /* Plus grand sur PC */
   flex-wrap: wrap;
   justify-content: flex-start;
   height: auto;
 }
+
 .objectf {
   display: flex;
-  flex-wrap: wrap; /* Essaie aussi: nowrap, wrap-reverse */
+  flex-wrap: wrap;
   justify-content: flex-end;
-  width: 10%; /* Ajustez cette valeur selon vos besoins */
+  width: 15%; /* Ajusté pour plus de largeur sur PC */
   height: auto;
 }
+
 .présentation,
 .exp-pro,
 .skills {
   display: flex;
-  flex-wrap: wrap; /* Essaie aussi: nowrap, wrap-reverse */
+  flex-wrap: wrap;
   justify-content: flex-start;
-  width: 50%; /* Ajustez cette valeur selon vos besoins */
+  width: 50%; /* Moitié de l'écran pour PC */
   height: auto;
 }
 
-.objectf,
-.formation {
-  display: flex;
-  flex-wrap: wrap; /* Essaie aussi: nowrap, wrap-reverse */
-  justify-content: flex-sart;
-  width: 50%; /* Ajustez cette valeur selon vos besoins */
-  height: auto;
-}
 .langues {
   display: flex;
-  flex-wrap: wrap; /* Essaie aussi: nowrap, wrap-reverse */
+  flex-wrap: wrap;
   justify-content: flex-end;
-  width: 50%; /* Ajustez cette valeur selon vos besoins */
+  width: 50%; /* Idem pour la section langues */
   height: auto;
 }
+
 .info-perso,
 .item-objectif {
   display: flex;
-  flex-wrap: wrap; /* Essaie aussi: nowrap, wrap-reverse */
+  flex-wrap: wrap;
   justify-content: flex-start;
-  width: 78%; /* Ajustez cette valeur selon vos besoins */
+  width: 70%; /* Largeur plus importante pour PC */
   height: auto;
   list-style-type: none;
 }
+
 .item-presentation h1 {
   color: #cb6ce6;
-  font-size: 18px;
+  font-size: 24px; /* Augmenter la taille de la police pour PC */
   display: flex;
   justify-content: center;
 }
+
 .item-presentation h2 {
   display: flex;
   justify-content: center;
   color: #8c52ff;
 }
+
 .présentation,
 .objectf p {
   font-weight: bold;
@@ -92,7 +103,7 @@
 .formation h1 {
   display: flex;
   justify-content: center;
-  width: 99%;
+  width: 100%; /* Réduction légère pour mieux centrer */
   background-color: #8c52ff;
   color: white;
 }
@@ -102,15 +113,172 @@
   color: #650081;
   font-weight: bold;
 }
+
 .item-experiences li,
 .item-langues li {
   list-style-type: none;
 }
-@media only screen and (min-width: 481px) and (max-width: 767px) {
-  .svg-objectif {
-    display: none;
+
+/* Media queries pour format PC */
+@media only screen and (min-width: 1024px) {
+  .présentation {
+    width: 70%; /* Ajustée pour plus d'espace */
   }
+
   .svg {
-    display: none;
+    width: 15%; /* Ajustée pour un espace plus grand */
+  }
+
+  .objectf {
+    width: 15%; /* Largeur ajustée */
+  }
+
+  .exp-pro,
+  .skills,
+  .objectf,
+  .formation,
+  .langues {
+    width: 50%; /* Moitié de l'écran pour PC */
+  }
+
+  .info-perso,
+  .item-objectif {
+    width: 70%; /* Ajusté pour un écran plus large */
+  }
+
+  .item-presentation h1 {
+    font-size: 24px; /* Texte plus grand sur PC */
+  }
+}
+
+@media only screen and (min-width: 390px) and (max-width: 932px) {
+  .contenair-header,
+  .competences,
+  .exp-form,
+  .item-informations {
+    display: flex;
+    width: 100%; 
+  }
+
+  .exp-form {
+    display: flex;
+    flex-direction: column; /* Les éléments seront empilés verticalement */
+    align-items: stretch; /* Étend chaque élément sur toute la largeur */
+    width: 100%; /* S'assure que la section occupe toute la largeur disponible */
+  }
+  
+  .exp-form > * {
+    flex: 1 1 auto; /* Permet aux éléments d'occuper toute la largeur et de s'étirer verticalement si nécessaire */
+    border-bottom: 1px solid #ccc; /* Ajoute une séparation visuelle entre les sections */
+  }
+  
+  .exp-form > *:last-child {
+    border-bottom: none; /* Supprime la bordure pour le dernier élément */
+  }
+  
+  .contenair-header {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .présentation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%; /* Ajustement pour mobile, pleine largeur */
+    height: auto;
+  }
+
+  .svg {
+    display: flex;
+    flex-wrap: wrap;
+    width: 15%; /* Ajusté pour les mobiles */
+    height: auto;
+  }
+
+  .svg-objectif svg {
+    display: flex;
+    width: 80%; /* Ajustement spécifique pour mobile */
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: auto;
+  }
+
+  .objectf {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 15%; /* Ajusté pour mobile */
+    height: auto;
+  }
+
+  .présentation,
+  .exp-pro,
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%; /* Pleine largeur pour mobile */
+    height: auto;
+  }
+
+  .objectf,
+  .formation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%; /* Pleine largeur sur mobile */
+    height: auto;
+  }
+
+  .langues {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 100%; /* Pleine largeur sur mobile */
+    height: auto;
+  }
+
+  .info-perso,
+  .item-objectif {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%; /* Pleine largeur sur mobile */
+    height: auto;
+    list-style-type: none;
+  }
+
+  .item-presentation h1 {
+    font-size: 22px; /* Ajustement pour mobile */
+    display: flex;
+    justify-content: center;
+  }
+
+  .item-presentation h2 {
+    display: flex;
+    justify-content: center;
+    color: #8c52ff;
+  }
+
+  .exp-pro h1,
+  .formation h1 {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Largeur 100% pour mobile */
+    background-color: #8c52ff;
+    color: white;
+  }
+
+  .item-experiences h4,
+  .item-formations h4 {
+    color: #650081;
+    font-weight: bold;
+  }
+
+  .item-experiences li,
+  .item-langues li {
+    list-style-type: none;
   }
 }
