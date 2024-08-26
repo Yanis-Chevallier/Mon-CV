@@ -179,18 +179,10 @@ li {
   }
   
 
-  .contenair-header {
+  .contenair-header, .présentation, .item-presentation {
+    flex-direction: column;
     justify-content: center;
     width: 100%;
-  }
-
-  .présentation {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%; /* Ajustement pour mobile, pleine largeur */
-    height: auto;
   }
 
   .svg {
