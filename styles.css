@@ -126,7 +126,7 @@ li {
   }
 
   .svg {
-    width: 15%; /* Ajustée pour un espace plus grand */
+    width: 7%; /* Ajustée pour un espace plus grand */
   }
 
   .objectf {
@@ -188,7 +188,7 @@ li {
   .svg {
     display: flex;
     flex-wrap: wrap;
-    width: 15%; /* Ajusté pour les mobiles */
+    width: 8%; /* Ajusté pour les mobiles */
     height: auto;
   }
 
